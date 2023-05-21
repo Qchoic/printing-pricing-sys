@@ -1,4 +1,4 @@
-<template>
+<template> 
     <section class="main">
         <el-menu router class="el-menu-vertical-demo" :collapse="tabBar.isCollapse" @open="handleOpen" @close="handleClose">
             <el-sub-menu v-for="(items, index) in tabBar.list" :key="index" :index="String(index + 1)">
