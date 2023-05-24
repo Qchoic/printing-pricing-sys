@@ -42,7 +42,7 @@ import {
 } from '@element-plus/icons-vue'
 import { useTabBarStore } from "../../stores/tabBar";
 import { useRouter } from 'vue-router';
-// import MyButton1 from "../../components/buttons/button1.vue";
+import MyButton1 from "../../components/buttons/button1.vue";
 const tabBar = useTabBarStore();
 const router = useRouter()
 
