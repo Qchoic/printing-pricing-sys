@@ -107,24 +107,20 @@ watch([data1, data2, data3, ttt], (value) => {
             },
             {
                 label: "制版数量",
-                value: (Math.ceil(contentCount / value[1].productCount / (2 ** value[1].size)) + 1) * (value[1].productType == "001" ? 1 : 0)
+                value: (Math.ceil(contentCount / value[1].productCount) * value[2].content.colorSystem + 1 * value[2].cover.colorSystem) * (value[1].productType == "001" ? 1 : 0)
             },
             {
                 label: "制版费用(元)",
-                value: ((Math.ceil(contentCount / value[1].productCount / (2 ** value[1].size))) * 50 * value[2].content.colorSystem + 1 * 50 * value[2].cover.colorSystem) * (value[1].productType == "001" ? 1 : 0)
+                value: ((Math.ceil(contentCount / value[1].productCount)) * 50 * value[2].content.colorSystem + 1 * 50 * value[2].cover.colorSystem) * (value[1].productType == "001" ? 1 : 0)
             },
-            // {
-            //     label: "预价格",
-            //     value: allPrice + (Math.ceil(contentCount / (2 ** value[1].size))) * 50 * value[2].content.colorSystem + 1 * 50 * value[2].cover.colorSystem
-            // },
             {
                 label: "人工费(元)",
-                value: (allPrice + ((Math.ceil(contentCount / value[1].productCount / (2 ** value[1].size))) * 50 * value[2].content.colorSystem + 1 * 50 * value[2].cover.colorSystem) * (value[1].productType == "001" ? 1 : 0)) * (value[1].productType == "001" ? 0.2 : 0.3)
+                value: (allPrice + ((Math.ceil(contentCount / value[1].productCount)) * 50 * value[2].content.colorSystem + 1 * 50 * value[2].cover.colorSystem) * (value[1].productType == "001" ? 1 : 0)) * (value[1].productType == "001" ? 0.2 : 0.3)
 
             },
             {
                 label: "总价格(元)",
-                value: (allPrice + ((Math.ceil(contentCount / value[1].productCount / (2 ** value[1].size))) * 50 * value[2].content.colorSystem + 1 * 50 * value[2].cover.colorSystem) * (value[1].productType == "001" ? 1 : 0)) * (value[1].productType == "001" ? 1.2 : 1.3)
+                value: (allPrice + ((Math.ceil(contentCount / value[1].productCount)) * 50 * value[2].content.colorSystem + 1 * 50 * value[2].cover.colorSystem) * (value[1].productType == "001" ? 1 : 0)) * (value[1].productType == "001" ? 1.2 : 1.3)
             },
             {
                 label: "利润(元)",

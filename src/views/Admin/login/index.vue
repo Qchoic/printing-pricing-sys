@@ -35,7 +35,6 @@
 
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
-
 const wallpaperCounter = computed(() => Math.floor(Math.random() * 11));
 const wallpaperPath = computed(() => "./wallpaper/" + wallpaperCounter.value + ".jpg");
 const router = useRouter()
@@ -51,7 +50,6 @@ const lists = [
         passwd: "test",
     }
 ]
-
 const $id = ref<HTMLInputElement>()
 const $passwd = ref<HTMLInputElement>()
 const check = () => {
@@ -60,7 +58,6 @@ const check = () => {
             return true; // 如果校验通过，则返回 true
         }
     }
-
     // 如果列表中没有匹配的对象，则检查本地存储中的登录状态
     return (localStorage.getItem("isLogin") === "true") ? true : false;
 };
@@ -85,7 +82,6 @@ onMounted(() => {
         localStorage.removeItem("isLogin")
     }
 })
-
 onActivated(() => {
     if (localStorage.getItem("isLogin") === "true") {
         router.push({
@@ -95,7 +91,6 @@ onActivated(() => {
         localStorage.removeItem("isLogin")
     }
 })
-
 </script>
 
 <style lang="less" scoped>
